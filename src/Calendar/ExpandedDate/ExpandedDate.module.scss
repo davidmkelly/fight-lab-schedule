@@ -1,0 +1,116 @@
+@import "src/styles/variables";
+@import "src/styles/mixins";
+
+.ExpandedDate {
+  display: flex;
+  flex-direction: column;
+  width: 35vw;
+  height: 35vh;
+  overflow-y: auto;
+  padding: 3rem;
+
+  @include respond(tab-port) {
+    width: 50vw;
+  }
+
+  @include respond(phone) {
+    width: 100%;
+  }
+
+  //@media (prefers-color-scheme: dark) {
+  //  background-color: $color-grey-900;
+  //}
+}
+
+.Name {
+  font-size: 1.8rem;
+}
+
+.Instructor {
+  font-size: 1.8rem;
+}
+
+.Time {
+  font-size: 1.8rem;
+  color: $color-grey-600;
+}
+
+.Date {
+  font-size: 2.4rem;
+  text-align: center;
+}
+
+.Class {
+  border-bottom: 2px solid transparent;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.Class:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.IconBlock {
+  margin-left: auto;
+}
+
+.Icon {
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.Icon:hover {
+  background-color: #5e747f;
+  transform: translateY(-2px);
+  fill: white;
+}
+
+.Icon > * {
+  pointer-events: none;
+}
+
+.Icon:not(:first-child) {
+  margin-left: 1rem;
+  fill: darkred;
+}
+
+.Attendance {
+  font-size: 1.6rem;
+  /*margin-top: 1rem;*/
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.attendanceNum {
+  background-color: rgba(32, 191, 107, 0.5);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  width: 3.5rem;
+  margin-left: 1rem;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+
+  transition: all 0.2s;
+}
+
+.attendanceNum:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 1rem rgba(0, 0, 0, 0.5);
+  color: white;
+  background-color: #20bf6b;
+}
+
+.attendanceNum:active {
+  transform: translateY(0);
+}
+
+.buttonGroup {
+  display: flex;
+}

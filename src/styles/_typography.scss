@@ -1,0 +1,71 @@
+body {
+  font-family: $font-primary, sans-serif;
+  font-weight: 300;
+  line-height: 1.6;
+  background: $color-grey-100;
+  color: $black;
+  font-size: $font-md;
+
+  @include respond(phone) {
+    line-height: 1.7;
+  }
+
+  // Handle dark mode
+  @media (prefers-color-scheme: dark) {
+    background: $color-grey-900;
+    color: $color-grey-300;
+  }
+}
+
+%heading {
+  font-family: $font-display, serif;
+  font-weight: 400;
+}
+
+.heading-primary {
+  @extend %heading;
+  line-height: 1;
+  font-size: 5rem;
+
+  &--light {
+    color: $white;
+  }
+}
+
+.heading-secondary {
+  @extend %heading;
+  font-size: 4.2rem;
+
+  // Position
+  position: relative;
+  grid-column: 1 / -1;
+  justify-self: center;
+  text-align: center;
+  margin: 8rem 0 4rem 0;
+
+  &::after {
+    content: '';
+    height: 1.6rem;
+    width: 1.6rem;
+    border-radius: 50%;
+    display: block;
+    background: linear-gradient(
+      to right,
+      $color-primary-700,
+      $color-primary-300
+    );
+    position: absolute;
+    right: -3rem;
+    top: 2.7rem;
+  }
+}
+
+.heading-tertiary {
+  @extend %heading;
+  font-size: $font-big;
+}
+
+.heading-quaternary {
+  @extend %heading;
+  font-size: $font-xl;
+}

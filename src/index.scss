@@ -1,0 +1,93 @@
+@import "styles/variables";
+@import "styles/mixins";
+@import "styles/typography";
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  font-family: $font-primary, sans-serif;
+  font-weight: 300;
+  line-height: 1.6;
+  background-color: $color-grey-100;
+
+  color: $color-grey-900;
+  font-size: $font-md;
+
+  @include respond(phone) {
+    line-height: 1.7;
+  }
+
+  // Handle dark mode
+  @media (prefers-color-scheme: dark) {
+    background: $color-grey-900;
+    color: $color-grey-300;
+  }
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+#root {
+  display: grid;
+  grid-template-rows: 8vh minmax(92vh, min-content);
+  grid-template-columns:
+    [full-start] minmax(6rem, 1fr) [center-start] repeat(
+      8,
+      [col-start] minmax(min-content, 14.25rem) [col-end]
+    )
+    [center-end] minmax(6rem, 1fr) [full-end];
+
+  @include respond(tab-port) {
+    grid-template-columns:
+      [full-start] minmax(0.5rem, 1fr) [center-start] repeat(
+        8,
+        [col-start] minmax(min-content, 14.25rem) [col-end]
+      )
+      [center-end] minmax(0.5rem, 1fr) [full-end];
+
+    grid-template-rows: auto;
+    overflow-x: hidden;
+  }
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: $font-display;
+}
+
+:root {
+  --color-primary: #5e747f;
+  --color-secondary: #213955;
+  --color-tertiary: #b6be9c;
+  --color-quaternary: #eeeed2;
+  --color-quinary: #e5c1bd;
+  --color-light-grey: #bababa;
+  --color-highlight-2: #ef6461;
+}
+
+/*
+  COLORS ------------------------------
+  #5e747f
+  #7B9E87
+  #b6be9c
+  #d2d0ba
+  #e5c1bd
+*/

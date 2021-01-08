@@ -1,0 +1,132 @@
+@import "src/styles/variables";
+@import "src/styles/mixins";
+
+.MonthlyCalendar {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  transition: all 0.2s;
+  cursor: pointer;
+
+  box-shadow: 0 2px 2px rgba($color-grey-900, 0.1);
+  border: 1px solid $color-grey-300;
+  overflow-y: auto;
+
+  &:hover {
+    background-color: $color-grey-300;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+  }
+
+  &:hover .Day {
+    background-color: $color-primary-400;
+    color: $color-grey-100;
+  }
+
+  @include respond(tab-port) {
+    padding: 0.5rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    &:hover {
+      background-color: $color-grey-700;
+    }
+
+    &:hover .Day {
+      background-color: $color-primary-900;
+    }
+  }
+}
+
+.Dim {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  color: $color-grey-500;
+  transition: all 0.2s;
+  cursor: pointer;
+
+  box-shadow: 0 2px 2px rgba($color-grey-900, 0.1);
+  border: 1px solid $color-grey-200;
+
+  &:hover {
+    background-color: $color-grey-500;
+    color: $color-grey-900;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    border: 1px solid $color-grey-800;
+  }
+}
+
+.Day {
+  font-size: 1.6rem;
+  height: 3rem;
+  width: 3rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s;
+
+  @include respond(phone) {
+    justify-content: start;
+    align-items: start;
+  }
+}
+
+.Name {
+  font-size: 1.4rem;
+
+  display: flex;
+  align-items: flex-end;
+  //transform: translateY(-0.5rem);
+
+  @include respond(tab-port) {
+    display: none;
+  }
+}
+
+.Time {
+  font-size: 1.4rem;
+  color: #5e747f;
+
+  @include respond(tab-port) {
+    display: none;
+  }
+}
+
+.Session {
+  border-bottom: 2px solid transparent;
+
+  &:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+
+  @include respond(tab-port) {
+    &:not(:last-child) {
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+.Instructor {
+  font-size: 1rem;
+  margin-left: 2px;
+  width: max-content;
+}
+
+.mobileDisplay {
+  display: none;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 2rem;
+    height: 2px;
+    background-color: red;
+  }
+
+  @include respond(tab-port) {
+    display: block;
+  }
+}

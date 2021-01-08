@@ -1,0 +1,84 @@
+@import "src/styles/mixins";
+@import "src/styles/variables";
+
+.nav {
+  color: $white;
+  grid-column: full-start / full-end;
+  background-color: $color-secondary-600;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 20;
+  box-shadow: 0 0.2rem 0.2rem rgba($color-grey-500, 0.1);
+
+  @include respond(tab-port) {
+    display: none;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    background-color: $color-secondary-900;
+  }
+}
+
+.fixed-top {
+  position: fixed;
+  top: 0;
+  //background-color: $color-tertiary;
+  z-index: 100;
+  width: 100%;
+  height: 8vh;
+
+  @include respond(tab-port) {
+    display: none;
+  }
+}
+.logo {
+  font-size: 2.8rem;
+  font-family: $font-display;
+  align-self: center;
+  margin-right: auto;
+  margin-left: 2rem;
+  color: $white;
+  text-decoration: none;
+}
+
+.icon {
+  width: 6rem;
+  fill: $color-grey-800;
+  stroke: $color-grey-300;
+  margin-left: 1rem;
+}
+
+.link {
+  font-size: 2.3rem;
+  font-weight: 300;
+  padding: 0 4rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: inherit;
+
+  transition: all 0.2s;
+
+  border-bottom: 0.3rem solid transparent;
+
+  @include respond(big-desktop) {
+  }
+
+  @include respond(tab-port) {
+    display: none;
+  }
+
+  &:hover {
+    color: $color-primary-500;
+    border-bottom: 0.3rem solid currentColor;
+  }
+
+  &:first-child {
+    color: $color-primary-500;
+  }
+
+  &:last-child {
+    margin-right: 8rem;
+  }
+}

@@ -1,0 +1,23 @@
+.IconBlock {
+    margin-left: auto;
+}
+
+.Icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+    transition: all .2s;
+    padding: 4px;
+    border-radius: 5px;
+    fill: darkred;
+}
+
+.Icon:hover {
+    background-color: #5e747f;
+    transform: translateY(-2px);
+    fill: white
+}
+
+.Icon > * {
+    pointer-events: none;
+}

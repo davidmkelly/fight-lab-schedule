@@ -1,0 +1,39 @@
+@import "src/styles/mixins";
+@import "src/styles/variables";
+
+.Calendar {
+  //height: 100%;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: 6vh 4vh;
+  grid-auto-rows: 13.2vh;
+
+  background-color: $color-grey-100;
+
+  padding-top: 1rem;
+
+  grid-column: center-start / center-end;
+  box-shadow: 0 2px 20px rgba($color-grey-700, 0.1);
+
+  @include respond(tab-port) {
+    //padding-top: 4rem;
+    grid-auto-rows: 15rem;
+  }
+
+  @include respond(phone) {
+    grid-auto-rows: 13.2vh;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    background-color: $color-grey-900;
+    color: $color-grey-100;
+  }
+}
+
+@media only screen and (max-width: 56.25em) {
+  .Calendar {
+  }
+}
+
+@media only screen and (max-width: 37.5em) {
+}

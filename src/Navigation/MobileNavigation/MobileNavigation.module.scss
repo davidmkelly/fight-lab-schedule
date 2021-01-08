@@ -1,0 +1,177 @@
+@import "src/styles/mixins";
+@import "src/styles/variables";
+
+.mNav {
+  display: none;
+
+  @include respond(tab-port) {
+    display: inline-block;
+    order: 1;
+  }
+
+  //FUNCTIONALITY
+  &__checkbox:checked ~ &__background {
+  }
+
+  &__checkbox:checked ~ &__nav {
+  }
+
+  //  ICON
+  //&__checkbox:checked + &__button &__icon {
+  //  background-color: transparent;
+  //}
+  //
+  //&__checkbox:checked + &__button &__icon::before {
+  //  top: 0;
+  //  transform: rotate(135deg);
+  //}
+  //
+  //&__checkbox:checked + &__button &__icon::after {
+  //  top: 0;
+  //  transform: rotate(-135deg);
+  //}
+}
+
+.icon {
+  position: relative;
+  margin-top: 3.5rem;
+
+  &,
+  &::before,
+  &::after {
+    width: 3rem;
+    height: 2px;
+    background-color: $white;
+    display: inline-block;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    transition: all 0.2s;
+  }
+
+  &::before {
+    top: -0.8rem;
+  }
+  &::after {
+    top: 0.8rem;
+  }
+}
+
+.button {
+  background-color: $color-secondary-500;
+  height: 7rem;
+  width: 7rem;
+  position: fixed;
+  top: 6rem;
+  right: 6rem;
+  border-radius: 50%;
+  z-index: 2000;
+  box-shadow: 0 1rem 3rem rgba($color-grey-900, 0.1);
+  text-align: center;
+  cursor: pointer;
+
+  @include respond(tab-port) {
+    top: 2.2rem;
+    right: 3rem;
+  }
+
+  @include respond(phone) {
+    top: 1rem;
+    right: 1rem;
+  }
+}
+
+.background {
+  height: 6rem;
+  width: 6rem;
+  border-radius: 50%;
+  position: fixed;
+  top: 6.5rem;
+  right: 6.5rem;
+  background-image: radial-gradient($color-secondary-400, $color-secondary-900);
+  z-index: 1000;
+  transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+
+  @include respond(tab-port) {
+    top: 3rem;
+    right: 3.5rem;
+  }
+
+  @include respond(phone) {
+    top: 1.5rem;
+    right: 1.5rem;
+  }
+}
+
+.nav {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1500;
+
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.list {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+  text-align: left;
+  width: 100%;
+}
+
+.item {
+  margin: 1rem;
+}
+
+.link {
+  &:link,
+  &:visited {
+    //visibility: hidden;
+    display: inline-block;
+    font-size: $font-big;
+    font-weight: 300;
+    padding: 1rem 2rem;
+    color: $white;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-image: linear-gradient(
+      120deg,
+      transparent 0%,
+      transparent 50%,
+      $white 50%
+    );
+    background-size: 260%;
+    transition: all 0.4s;
+
+    transform: translateX(-150%);
+  }
+
+  &:hover,
+  &:active {
+    background-position: 100%;
+    color: orangered;
+    transform: translateX(1rem);
+  }
+}
+
+.backgroundActive {
+  transform: scale(80);
+}
+
+.navActive {
+  opacity: 1;
+  width: 100%;
+}
+
+.linkActive {
+  transform: translateX(0) !important;
+}

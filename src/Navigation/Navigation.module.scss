@@ -82,3 +82,9 @@
     margin-right: 8rem;
   }
 }
+
+.active {
+  //color: $color-secondary-200;
+  color: $color-primary-500;
+  border-bottom: 0.3rem solid currentColor;
+}

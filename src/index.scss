@@ -62,7 +62,7 @@ code {
 
 #root {
   display: grid;
-  grid-template-rows: 8vh minmax(92vh, min-content);
+  grid-template-rows: 6rem minmax(92vh, min-content);
   grid-template-columns:
     [full-start] minmax(6rem, 1fr) [center-start] repeat(
       8,

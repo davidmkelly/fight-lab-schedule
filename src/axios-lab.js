@@ -3,7 +3,7 @@ let instance;
 
 if (process.env.NODE_ENV === "production") {
   instance = axios.create({
-    baseURL: "https://dev.thefightlabtx.com/api/v1/",
+    baseURL: "https://thefightlabtx.com/api/v1/",
     withCredentials: true,
   });
 } else {

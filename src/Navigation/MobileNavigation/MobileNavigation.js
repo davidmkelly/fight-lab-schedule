@@ -58,16 +58,16 @@ const MobileNavigation = () => {
           </li>
           <li className={styles.item}>
             <a
-                className={linkStyles.join(" ")}
-                href={"https://app.thefightlabtx.com"}
+              className={linkStyles.join(" ")}
+              href={"https://app.thefightlabtx.com"}
             >
               App
             </a>
           </li>
           <li className={styles.item}>
             <a
-                className={linkStyles.join(" ")}
-                href={"https://contact.thefightlabtx.com"}
+              className={linkStyles.join(" ")}
+              href={"https://thefightlabtx.com#contact"}
             >
               Contact
             </a>

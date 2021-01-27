@@ -30,7 +30,7 @@ const MobileNavigation = () => {
           <li className={styles.item}>
             <a
               className={linkStyles.join(" ")}
-              href={"https://dev.thefightlabtx.com"}
+              href={"https://thefightlabtx.com"}
             >
               Home
             </a>
@@ -43,7 +43,7 @@ const MobileNavigation = () => {
           <li className={styles.item}>
             <a
               className={linkStyles.join(" ")}
-              href={"https://dev.thefightlabtx.com#instructors"}
+              href={"https://thefightlabtx.com#instructors"}
             >
               Instructors
             </a>
@@ -51,7 +51,7 @@ const MobileNavigation = () => {
           <li className={styles.item}>
             <a
               className={linkStyles.join(" ")}
-              href={"https://dev.thefightlabtx.com"}
+              href={"https://thefightlabtx.com"}
             >
               Blog
             </a>

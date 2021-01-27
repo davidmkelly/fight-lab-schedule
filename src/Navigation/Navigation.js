@@ -11,19 +11,16 @@ const Navigation = () => {
       <a className={styles.logo} href={"/"}>
         The Fight Lab TX
       </a>
-      <a className={styles.link} href={"https://dev.thefightlabtx.com"}>
+      <a className={styles.link} href={"https://thefightlabtx.com"}>
         Home
       </a>
       <a className={[styles.link, styles.active].join(" ")} href={"/"}>
         Schedule
       </a>
-      <a
-        className={styles.link}
-        href={"https://dev.thefightlabtx.com#instructors"}
-      >
+      <a className={styles.link} href={"https://thefightlabtx.com#instructors"}>
         Instructors
       </a>
-      <a className={styles.link} href={"https://dev.thefightlabtx.com/blog"}>
+      <a className={styles.link} href={"https://thefightlabtx.com/blog"}>
         Blog
       </a>
       <a className={styles.link} href={"https://app.thefightlabtx.com"}>

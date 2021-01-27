@@ -26,6 +26,9 @@ const Navigation = () => {
       <a className={styles.link} href={"https://app.thefightlabtx.com"}>
         App
       </a>
+      <a className={styles.link} href={"https://dev.thefightlabtx.com#contact"}>
+        Contact
+      </a>
     </nav>
   );
 };
